@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" media = "(min-width:500px)" href="stylesheet.css">
+		<title>Opportunity management</title>
+		
+	</head>
+	
+	<body>
+	
+		
+		<div class = "header">
+			<div class = "navigation">
+				<a href = "userHome.html">Accounts</a>
+				<a href = "opportunities.html">Opportunities</a>
+				<a href="logout.php">Log out</a>
+			</div>
+		</div>
+			
+		<div class = "available">
+		<center>
+			<p> available opportunities</p>
+			<table id="results" width="240" border="1" cellpadding="5">
+				<thead>
+					<tr>
+						<th scope="col" width="120">Account</th>
+						<th scope="col" width="120">Address</th>
+					</tr>
+				</thead>
+			</table>
+			</center>
+		</div>
+		<hr/>
+			
+		<div class = "new">
+			<form action="" >
+				<fieldset><legend>Create new opportunity</legend>
+					
+				Opportunity name: <br/>
+								
+				<input id = "oppname" type="text" name="oppname" > <br/>
+								
+				Amount: <br/>
+								
+				<input id = "amount" type="text" name="amount"><br/>
+				
+				Discovery: <br/>
+								
+				<input id = "discovery" type="text" name="discovery"><br/>
+				
+				Negotiations: <br/>
+								
+				<input id = "negotiations" type="text" name="negotiations"><br/>
+				
+				<p><input type="submit" value="Create" class="form-button">
+				<input type="reset" value="Reset" class="form-button"></p>
+
+				</fieldset>
+			</form>
+		</div>
+
+	</body>
+</html>

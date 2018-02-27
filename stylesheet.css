@@ -1,0 +1,86 @@
+html{
+	font-family: candara;
+	letter-spacing: 0.5px;
+}
+
+body{
+	margin: 0px;
+	background-image: url('images/footerBg.jpg');
+	background-attachment: fixed;
+	padding-left: 20px;
+	color: white;
+}
+
+.user{
+	margin-top: 10%;
+}
+
+fieldset{
+	color: white;
+	width:50%;
+}
+legend{
+	color: white;
+}
+
+.form-button{
+	width: 90px;
+	background-color: rgb(30,30,30);
+	color: white;
+	border-radius: 6px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+a{
+	color: red;
+}
+
+.header{
+	background-color: rgb(150,150,150);
+	box-shadow: inset -3px -5px 50px black;
+	padding-top: 15px;
+	margin-left: -20px;
+	position: fixed;
+	top: 0px;
+	z-index: 1;
+	width: 100%;
+	margin-bottom: 40px;
+}
+.navigation{
+	background-color: rgba(20,20,20,0.8);
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	
+}
+
+.navigation a {
+	 float: left;
+    text-decoration: none;
+	text-align: center;
+	color: white;
+	 padding: 14px 16px;
+	font-size: 17px;
+	border-radius: 12px;
+	margin-left: 100px;	
+}
+
+.navigation a:hover {
+	color: rgb(17, 28, 36);
+	background-color: rgb(255,255,255);
+}
+
+.navigation a.active {
+    color: red;
+}
+
+.available{
+	margin-top: 100px;
+	margin-bottom: 10px;
+}

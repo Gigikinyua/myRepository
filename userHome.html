@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" media = "(min-width:500px)" href="stylesheet.css">
+		<title>Opportunity management</title>
+	</head>
+	
+	<body>
+		<?php
+
+		if (isset($_POST['submitaccount']))
+			{	   
+			include 'db.php';
+							$account_name=$_POST['account_name'] ;
+							
+							$account_address=$_POST['account_address'] ;
+														
+				 $insert = mysql_query("INSERT INTO accounts(account_name, account_address) VALUES ('$account_name','$account_address')"); 
+											
+			if($insert) {			 
+				header("Location: login.php");
+			} else {
+				echo "<br><center><font color= 'red' size='3'>Could not register.</center></font>";
+			}															
+					
+			}
+				   
+		?>
+		<div class = "header">
+			<div class = "navigation">
+				<a href = "userHome.html">Accounts</a>
+				<a href = "opportunities.html">Opportunities</a>
+				<a href="logout.php">Log out</a>
+			</div>
+		</div>
+			
+		<div class = "available">
+		<center>
+			<h3>Available accounts</h3>
+			<table id="results" width="240" border="1" cellpadding="5">
+				<thead>
+					<tr>
+						<td width="120">Account</td>
+						<td width="120">Address</td>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+			</center>
+		</div>
+		<hr/>
+			
+		<div class = "new">
+			<form action ="" method = "post">
+				<fieldset><legend>Create new account</legend>
+					<table id = "form" border="0" width="407" cellpadding="5">
+						<tr>
+						  <td width="128"><strong>Account name </strong></td>
+						  <td width="269"><input type="text" name="account_name"/> </td>
+						</tr>
+						<tr>
+						  <td><strong>Account address </strong></td>
+						  <td><input type="text" name="account_address"/> </td>
+						</tr>
+				</table>
+					
+				<p><input type="submit" value="Create" class="form-button" name = "submitaccount">
+				<input type="reset" value="Reset" class="form-button"></p>
+
+				</fieldset>
+			</form>
+		</div>
+
+	</body>
+</html>

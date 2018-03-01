@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" media = "(min-width:500px)" href="stylesheet.css">
+		<title>Opportunity management</title>
+		
+	</head>
+	
+	<body>
+	<?php
+
+		if (isset($_POST['submit']))
+			{	   
+			include 'db.php';
+							$oppname=$_POST['oppname'] ;
+							
+							$amount=$_POST['amount'] ;
+							$discovery = $_POST['discovery'];
+							$negotiations = $_POST['negotiations'];
+														
+				 $insert2 = mysql_query("INSERT INTO opportunity(oppname, amount, discovery, negotiations) 
+							VALUES ('$oppname','$amount', $discovery, $negotiations)"); 
+											
+			if($insert) {			 
+				header("Location: login.php");
+			} else {
+				echo "<br><center><font color= 'red' size='3'>Could not register.</center></font>";
+			}															
+					
+			}
+				   
+		?>
+		
+		<div class = "header">
+			<div class = "navigation">
+				<a href = "userHome.html">Accounts</a>
+				<a href = "opportunities.html">Opportunities</a>
+				<a href="logout.php">Log out</a>
+			</div>
+		</div>
+			
+		<div class = "available">
+		<center>
+			<p> available opportunities</p>
+			<table id="results" width="480" border="1" cellpadding="5">
+				<thead>
+					<tr>
+						<th scope="col" width="120">Opportunity</th>
+						<th scope="col" width="120">Amount</th>
+						<th scope="col" width="120">Discovery</th>
+						<th scope="col" width="120">Negotiations</th>
+					</tr>
+				</thead>
+			</table>
+			</center>
+		</div>
+		<hr/>
+			
+		<div class = "new">
+			<form action="" method = "post" name = "opportunity">
+				<fieldset>
+				<table id = "form" border="0" width="700" cellpadding="5">
+					 <thead>
+						<tr>
+							<th colspan="2">Create new opportunity</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						  <td width="200"><strong>Opportunity name </strong></td>
+						  <td width="500"><input type="text" name="oppname"/> </td>
+						</tr>
+						<tr>
+						  <td><strong>Amount </strong></td>
+						  <td><input type="number" name="amount"/> </td>
+						</tr>
+						<tr>
+						  <td><strong>Discovery </strong></td>
+						  <td><input type="text" name="discovery"/> </td>
+						</tr>
+						<tr>
+						  <td><strong>Negotiations </strong></td>
+						  <td><input type="text" name="negotiations"/> </td>
+						</tr>
+						<tbody>
+				</table>
+				<p><input type="submit" value="Create" class="form-button" name = "submit">
+				<input type="reset" value="Reset" class="form-button"></p>
+				</fieldset>
+			</form>
+		</div>
+
+	</body>
+</html>
